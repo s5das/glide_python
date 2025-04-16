@@ -1,0 +1,7 @@
+0.0 0.0 0.0 0.0 0.0
+inf inf inf inf inf
+0.0 0.0 0.0 0.0 0.0
+71.28244664137148 1.8886196304175402 70.43111111111111 34.3997795457908 34.13099015842328
+inf inf inf inf inf
+nan nan nan nan nan
+nan nan nan nan nan

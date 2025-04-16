@@ -1,0 +1,63 @@
+$ This is the input file GLIDE
+$ You can add as many comment lines as you wish, as long as they start with a
+$   dollar sign!
+
+$ (Input 1) Name of the run (also the name of the folder in which the solution is stored)
+$ NOTE: You must create this folder manually before running GLIDE,along with one called unc inside
+$ The name should be 5 letters long
+$ useful to empty this folder
+$   find RUN01 -type f -print0 | xargs -0 rm
+
+RUN02
+
+$ (Input 2) Name of the topo file used
+$ The file should contain nx by ny elevation points (see below)
+$    defining the topography in degrees,usually 0.0008333
+$ Note that the evolution of this topography (in amplitude and elevation offset)
+$    can change at each time step, as specified below in Input 12.
+
+"data_ours/input.xyz"
+
+$ (Input 3) Number of points (nx, ny) in the longitude and latitude directions
+$  of the topography file being loaded.
+$ 1200 2040 for previous DEM (FQM18072018.xyz)
+
+7201 3601
+
+$ (Input 4) Data file, containing lon,lat,z,a,e $$maybe,iflag
+
+"data_ours/data_input.txt"
+
+
+$ (Input 5) Region of interest, should be smaller than topography,
+$ these limits correspond to west, east, south, and north
+
+101.0 103.0 38.0 39.0
+
+$ (Input 6) A priori estimate of the mean exhumation rate,
+$ along with a uncertainity on this estimate in km/Myrs
+
+.1 7.
+
+$correlation parameters, anisotropy(i.e. strike could be the orogen), correlation length is isotropic
+$ (Input 7) Correlation length scale, in km', angle perpendicular to strike, stretching along angle
+$ the four parameter is to prescibe correlation in time
+
+20. 0. 0. .000000001
+
+$ (Input 8) Time step length, in Myrs
+
+10.
+
+$ (Input 9) End time
+
+350.
+
+$ (Input 8) Thermal parameters,
+$ Thermal thickness (km), T_surface(C) at 0,T_base(C),diffusivity(km2/Myr),heat production(C/Myr)
+
+50. 10. 1120. 20. 0.0001
+
+$ (Input 9) Number of iterations, mu parameter for the inversion
+
+100 5.e-4
